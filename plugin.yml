@@ -1,0 +1,7 @@
+name: PluginName
+main: aida0710\plugin_name\PluginName
+version: 1.0.0
+api: 5.0.0
+author: aida0710
+depend:
+  - DevTools

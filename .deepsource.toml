@@ -1,0 +1,12 @@
+version = 1
+
+[[analyzers]]
+name = "sql"
+
+[[analyzers]]
+name = "php"
+
+[[transformers]]
+name = "php-cs-fixer"
+
+skip_doc_coverage = ["class", "magic", "nonpublic"]

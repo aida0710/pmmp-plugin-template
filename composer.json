@@ -1,0 +1,17 @@
+{
+    "name": "aida0710/plugin_name",
+    "description": "A plugin for PocketMine-MP",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "8.3.*",
+        "php-64bit": "8.3.*",
+        "phpstan/phpstan": "*",
+        "friendsofphp/php-cs-fixer": "*",
+        "pocketmine/pocketmine-mp": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "aida0710\\plugin_name\\": "./src/aida0710/plugin_name/"
+        }
+    }
+}
