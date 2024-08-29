@@ -6,7 +6,7 @@ namespace aida0710\plugin_name;
 
 use pocketmine\plugin\PluginBase;
 
-class Main extends PluginBase {
+class PluginName extends PluginBase {
 
     /**
      * @return void
