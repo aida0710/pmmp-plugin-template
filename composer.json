@@ -3,8 +3,8 @@
     "description": "A plugin for PocketMine-MP",
     "minimum-stability": "stable",
     "require": {
-        "php": "8.3.*",
-        "php-64bit": "8.3.*",
+        "php": "8.2.*",
+        "php-64bit": "8.2.*",
         "phpstan/phpstan": "*",
         "friendsofphp/php-cs-fixer": "*",
         "pocketmine/pocketmine-mp": "5.*"
