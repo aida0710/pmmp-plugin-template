@@ -1,0 +1,18 @@
+{
+    "sourceFile": "plugin.yml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1724905340370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1724905340370,
+            "name": "Commit-0",
+            "content": "name: PluginName\r\nmain: aida0710\\pluginname\\Main\r\nversion: 1.0.0\r\napi: 5.0.0\r\nauthor: aida0710\r\ndepend:\r\n  - DevTools\r\n"
+        }
+    ]
+}
