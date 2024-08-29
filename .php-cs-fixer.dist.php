@@ -11,4 +11,5 @@ return $config->setRules([
 ])
     ->setFinder($finder)
     ->setRiskyAllowed(true)
-    ->setLineEnding("\n");
+    ->setLineEnding("\n")
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect());
