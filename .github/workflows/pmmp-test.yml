@@ -22,6 +22,7 @@ jobs:
           mkdir -p ./PocketMine-MP
           mkdir -p ./PocketMine-MP/plugins
           mkdir -p ./PocketMine-MP/plugins/LevelSystem
+          mv ./.github/plugins/* ./PocketMine-MP/plugins/
           mv ./.github/properties/* ./PocketMine-MP/
           shopt -s extglob
           mv !(PocketMine-MP) ./PocketMine-MP/plugins/LevelSystem/
