@@ -1,0 +1,76 @@
+name: PMMP Plugin Test
+
+on: [ push, pull_request ]
+
+jobs:
+  pmmp-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        uses: actions/checkout@v2
+
+      -
+        name: List directory contents
+        run: |
+          echo "Current directory structure:"
+          ls -la -R
+
+      -
+        name: move project files
+        run: |
+          mkdir -p ./PocketMine-MP
+          mkdir -p ./PocketMine-MP/plugins
+          mkdir -p ./PocketMine-MP/plugins/LevelSystem
+          mv ./.github/properties/* ./PocketMine-MP/
+          shopt -s extglob
+          mv !(PocketMine-MP) ./PocketMine-MP/plugins/LevelSystem/
+
+      -
+        name: List directory contents 2
+        run: |
+          echo "Current directory structure:"
+          ls -l -R
+
+      -
+        name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      -
+        name: Install PMMP
+        run: |
+          cd PocketMine-MP
+          wget -q -O - https://get.pmmp.io | bash -s -
+          cd ..
+
+      -
+        name: download DevTools
+        run: |
+          wget -O ./PocketMine-MP/plugins/PocketMine-DevTools.phar https://poggit.pmmp.io/r/220133/PocketMine-DevTools.phar
+
+      -
+        name: List directory contents3
+        run: |
+          echo "Current directory structure:"
+          ls -l -R
+
+      -
+        name: Start PMMP server
+        timeout-minutes: 1
+        run: |
+          cd PocketMine-MP
+          timeout 8s ./start.sh
+
+      -
+        name: Check server logs for errors
+        run: |
+          if grep -q "ERROR" PocketMine-MP/server.log; then
+            echo "Errors found in server log"
+            cat PocketMine-MP/server.log
+            exit 1
+          else
+            echo "No errors found in server log"
+            exit 0
+          fi
